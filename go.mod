@@ -19,8 +19,8 @@ go 1.26.0
 require (
 	github.com/gorilla/sessions v1.4.0
 	github.com/joho/godotenv v1.5.1
-	github.com/labstack/echo/v5 v5.4.4
-	golang.org/x/crypto v0.58.0
+	github.com/labstack/echo/v5 v5.4.5
+	golang.org/x/crypto v0.59.0
 	gorm.io/driver/mysql v1.6.0
 	gorm.io/gorm v1.31.2
 )
