@@ -21,7 +21,7 @@
 #   1.26 とだけ書くと、PCに残っている古い 1.26.x が使われ続け、新しめのライブラリが
 #   「Goが古い」と言ってビルドに失敗する(人によって通ったり通らなかったりする)。
 #   上げるときは go.mod の「go 1.26.x」より新しい番号にすること。
-FROM golang:1.27.3-bookworm AS base
+FROM golang:1.27.4-bookworm AS base
 
 WORKDIR /app
 
@@ -76,7 +76,7 @@ RUN go build -ldflags="-s -w" -o /out/server ./cmd/server
 #     必要がない。上の dev の箱が1GBを超えるのに対し、こちらは30MB程度で済む。
 #     起動も速く、AWSの費用も抑えられる。
 # -----------------------------------------------------------------------------
-FROM alpine:3.22 AS prod
+FROM alpine:3.24 AS prod
 
 # ca-certificates … 外部サイトへHTTPSで通信するために必要
 # tzdata          … 日本時間を扱うために必要(無いとUTCになる)
